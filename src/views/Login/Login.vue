@@ -28,7 +28,7 @@
             <!-- 底部 -->
             <el-form-item>
                 <el-checkbox v-model="ruleForm.autoLogin" :checked="ruleForm.autoLogin" label="7天内自动登录" name="type"></el-checkbox>
-                <el-button id="forget" type="text">忘记密码？</el-button>
+                <el-button id="forget" type="text" @click.native.prevent="$router.push('/password')">忘记密码？</el-button>
             </el-form-item>
         </el-form>
     </LoginHeader>
@@ -73,7 +73,7 @@ export default class Login extends Vue {
                         console.log('成功请求', res)
                     }).catch((err: any) => {
                         this.isLogin = false
-                        console.log(err)
+                        console.warn(err)
                     })
             }
         })

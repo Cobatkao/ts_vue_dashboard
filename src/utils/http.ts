@@ -25,7 +25,7 @@ service.interceptors.response.use((config: AxiosResponse) => {
     return config
 }, (err: any) => {
     let errMsg: string = ""
-    if (err && err.response.status) {
+    if (err && err.response && err.response.status) {
         switch(err.response.status) {
             case 401:
                 errMsg = "登录状态失效，请重新登录"
