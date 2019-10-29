@@ -2,16 +2,25 @@
   <div class="layout">
     <!-- 头部导航 -->
     <LayoutHeader />
+    <Content>
+      <SideBar slot="left"></SideBar>
+      <!-- 路由匹配到的组件将会显示在下面 -->
+      <router-view slot="content"></router-view>
+    </Content>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
 import LayoutHeader from "./LayoutHeader.vue"
+import Content from "./Content.vue"
+import SideBar from "./SideBar.vue"
 
 @Component({
     components: {
-      LayoutHeader
+      LayoutHeader,
+      Content,
+      SideBar
     }
 })
 
