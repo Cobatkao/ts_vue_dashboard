@@ -3,7 +3,7 @@
     <div class="page-center">
       <div class="info">
         <div class="title">
-          <img src="@/assets/logo.jpg" alt="头图" />
+          <img src="@/assets/logo.jpeg" alt="头图" />
           <span>练手项目</span>
         </div>
         <div class="detail">

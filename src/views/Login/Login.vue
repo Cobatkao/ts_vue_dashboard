@@ -75,6 +75,8 @@ export default class Login extends Vue {
                         this.isLogin = false
                         localStorage.setItem('ts_token', res.data.token)
                         this.setUsers(res.data.token)
+                        // 登录成功后跳转到首页
+                        this.$router.push('/')
                         console.log('成功请求', res)
                     }).catch((err: any) => {
                         this.isLogin = false

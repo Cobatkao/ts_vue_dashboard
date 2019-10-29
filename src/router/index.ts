@@ -9,8 +9,8 @@ const router: any =  new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import ('../views/Home.vue')
+      name: 'layout',
+      component: () => import ('../views/Layout/Index.vue')
     },
     {
       path: '/login',
