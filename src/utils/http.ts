@@ -8,7 +8,7 @@ import router from "@/router";
  */
 
 const service = axios.create({
-    timeout: 10000
+    timeout: 60000
 })
 
 service.interceptors.request.use((config: AxiosRequestConfig) => {

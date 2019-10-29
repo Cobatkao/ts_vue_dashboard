@@ -15,7 +15,7 @@
           </span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item command="usercenter">用户中心</el-dropdown-item>
-            <el-dropdown-item command="logout" divided>注销</el-dropdown-item>
+            <el-dropdown-item command="logout" divided>注销登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </el-col>
@@ -37,7 +37,18 @@ export default class LayoutHeader extends Vue {
   @Getter('user') getUser: any;
 
   handleCommand(command: string): void {
-    this.$message('click on item ' + command);
+    switch (command) {
+      case 'usercenter':
+        // this.$router.push('')
+        console.log('进入个人中心')
+        break;
+      case 'logout':
+        localStorage.removeItem('ts_token')
+        this.$router.replace('/login')
+        break;
+      default:
+        break;
+    }
   }
 
   created() {
