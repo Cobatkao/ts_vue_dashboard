@@ -1,5 +1,5 @@
 <template>
-  <div class="home">TableData</div>
+  <div class="table_data">TableData</div>
 </template>
 
 <script lang="ts">
@@ -14,5 +14,7 @@ export default class TableData extends Vue {}
 </script>
 
 <style scoped lang='scss'>
-
+.table_data {
+  margin: 5px;
+}
 </style>

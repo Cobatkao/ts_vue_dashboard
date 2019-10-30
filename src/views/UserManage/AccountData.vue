@@ -1,5 +1,5 @@
 <template>
-  <div class="account">AccountData</div>
+  <div class="account_data">AccountData</div>
 </template>
 
 <script lang="ts">
@@ -14,5 +14,7 @@ export default class AccountData extends Vue {}
 </script>
 
 <style scoped lang='scss'>
-
+.account_data {
+  margin: 5px;
+}
 </style>

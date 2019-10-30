@@ -1,5 +1,5 @@
 <template>
-  <div class="home">ChartsData</div>
+  <div class="charts_data">ChartsData</div>
 </template>
 
 <script lang="ts">
@@ -14,5 +14,7 @@ export default class ChartsData extends Vue {}
 </script>
 
 <style scoped lang='scss'>
-
+.charts_data {
+  margin: 5px;
+}
 </style>

@@ -9,8 +9,8 @@
       <!-- 右侧面包屑 -->
       <div class="wrap">
         <i class="fa fa-reorder"></i>
-        <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item v-for="{item, index} in breadcrumbCollection" :key="index" :to="{ path: `${item.path}` }">{{ item.title }}</el-breadcrumb-item>
+        <el-breadcrumb separator="/">
+          <el-breadcrumb-item v-for="item in breadcrumbCollection" :key="item.path" :to="{ path: `${item.path}` }">{{ item.title }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
       <!-- 右侧内容 -->
@@ -44,7 +44,6 @@ export default class Content extends Vue {
 
   initBreadCrumb(route: any) {
     const routeArray: any = [{path: '/', title: '后台管理系统'}]
-    console.log(route)
     for (const routerItem of route.matched) {
       if (routerItem.meta && routerItem.meta.title) {
         routeArray.push({

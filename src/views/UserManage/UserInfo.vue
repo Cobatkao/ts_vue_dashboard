@@ -1,5 +1,5 @@
 <template>
-  <div class="home">UserInfo</div>
+  <div class="user_info">UserInfo</div>
 </template>
 
 <script lang="ts">
@@ -14,5 +14,7 @@ export default class UserInfo extends Vue {}
 </script>
 
 <style scoped lang='scss'>
-
+.user_info {
+  margin: 5px;
+}
 </style>

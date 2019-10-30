@@ -1,5 +1,5 @@
 <template>
-  <div class="home">FormData</div>
+  <div class="form_data">FormData</div>
 </template>
 
 <script lang="ts">
@@ -14,5 +14,7 @@ export default class FormData extends Vue {}
 </script>
 
 <style scoped lang='scss'>
-
+.form_data {
+  margin: 5px;
+}
 </style>
