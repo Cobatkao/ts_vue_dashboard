@@ -10,9 +10,7 @@
       <div class="wrap">
         <i class="fa fa-reorder"></i>
         <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="{ path: '/' }">活动管理</el-breadcrumb-item>
-          <el-breadcrumb-item><a href="/">活动列表</a></el-breadcrumb-item>
-          <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="{item, index} in breadcrumbCollection" :key="index" :to="{ path: `${item.path}` }">{{ item.title }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
       <!-- 右侧内容 -->
@@ -25,14 +23,40 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator"
+import { Component, Vue, Provide, Watch } from "vue-property-decorator"
 @Component({
     components: {
 
     }
 })
 
-export default class Content extends Vue {}
+export default class Content extends Vue {
+  @Provide() breadcrumbCollection: any = []
+
+  // watch一个路由对象this.$route
+  @Watch('$route') handleRouteChange(newRouter: any) {
+    this.initBreadCrumb(newRouter)
+  }
+
+  created() {
+    this.initBreadCrumb(this.$route)
+  }
+
+  initBreadCrumb(route: any) {
+    const routeArray: any = [{path: '/', title: '后台管理系统'}]
+    console.log(route)
+    for (const routerItem of route.matched) {
+      if (routerItem.meta && routerItem.meta.title) {
+        routeArray.push({
+          path: routerItem.path ? routerItem.path : '/',
+          title: routerItem.meta.title
+        })
+      }
+    }
+    this.breadcrumbCollection = routeArray
+    console.log(this.breadcrumbCollection)
+  }
+}
 </script>
 
 <style scoped lang='scss'>

@@ -52,7 +52,7 @@ export default class LayoutHeader extends Vue {
   }
 
   created() {
-    console.log(this.getUser)
+    // console.log('getUser', this.getUser)
   }
 }
 </script>
