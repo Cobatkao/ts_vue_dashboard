@@ -8,6 +8,14 @@
           <i class="el-icon-menu"></i>
           <span slot="title">首页</span>
         </el-menu-item>
+        <el-menu-item index="2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">数据管理</span>
+        </el-menu-item>
+        <el-menu-item index="3">
+          <i class="el-icon-menu"></i>
+          <span slot="title">账户管理</span>
+        </el-menu-item>
       </el-menu>
   </el-scrollbar>
 </template>

@@ -16,7 +16,7 @@
         </el-breadcrumb>
       </div>
       <!-- 右侧内容 -->
-      <div class="content">
+      <div class="layout_content">
         <slot name="content"></slot>
       </div>
     </el-main>
@@ -55,6 +55,11 @@ export default class Content extends Vue {}
         cursor: pointer;
         padding-left: 16px;
       }
+    }
+
+    .layout_content {
+      width: 100%;
+      height: calc(100% - 129px);
     }
   }
 }
